@@ -1,0 +1,9 @@
+From:     Valid, Frozen, Missing
+To:       Valid, Missing, SameAsFrom
+Amount:   Normal, Zero, Negative, OverBalance, OverLimit
+Currency: Same, Different
+
+# If From does not exist, balance and limit are undefined, so amount checks are meaningless
+IF [From] = "Missing" THEN [Amount] = "Normal";
+# SameAsFrom means "same as the from account", impossible when From does not exist
+IF [From] = "Missing" THEN [To] <> "SameAsFrom";
