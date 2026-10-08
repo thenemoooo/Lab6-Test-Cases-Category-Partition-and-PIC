@@ -1,4 +1,4 @@
-AI: Claude Sonnet 5.5, 2026-10-08 (шинэ чат, өмнөх ярианы контекстгүй)
+AI: Claude Sonnet 5.5, 2026-10-08
 
 ## Prompt
 POST /transfer  { "from": ID, "to": ID, "amount": NUM, "currency": CODE }
