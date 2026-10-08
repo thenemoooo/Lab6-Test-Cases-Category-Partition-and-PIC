@@ -1,0 +1,1 @@
+pbpaste > ai/ai-response.md

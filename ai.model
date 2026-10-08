@@ -1,0 +1,13 @@
+# F.CSA313 Lab06 - Part A: POST /transfer
+# ~ угтвар = ERROR (invalid) утга, тест бүрт зөвхөн нэг ~ утга орно
+
+from_acct:   Active, ~NoSuchFrom, ~Frozen
+to_acct:     Existing, ~NoSuchTo, ~SameAsFrom
+amount_sign: Positive, ~Zero, ~Negative
+balance_rel: Below, Equal, ~Above
+limit_rel:   Below, Equal, ~Above
+daily_used:  None, Partial
+ccy:         SameAsFrom, Different
+
+# Ханшийн бүхэлчлэлээс болж хөрвүүлэлттэй үед яг хязгаарыг SINGLE тестээр шалгана
+IF [ccy] = "Different" THEN [balance_rel] <> "Equal" AND [limit_rel] <> "Equal";
